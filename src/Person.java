@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 public class Person {
     private Passport passport;
     private Cart cart;
@@ -35,6 +37,18 @@ public class Person {
 
     public Person() {
     }
+    public static Comparator<Person> sortByName = new Comparator<Person>() {
+        @Override
+        public int compare(Person o1, Person o2) {
+            return o1.getPassport().getFirstName().compareTo(o2.getPassport().getFirstName());
+        }
+    };
+    public static Comparator<Person> sortByAge = new Comparator<Person>() {
+        @Override
+        public int compare(Person o1, Person o2) {
+            return o1.getPassport().getAge()-o2.getPassport().getAge();
+        }
+    };
 
     @Override
     public String toString() {

@@ -32,11 +32,20 @@ public class Main {
 
         Person person1 = new Person(passport1,cart,11000);
         Person person2 = new Person(passport2,cart1,3000);
+        Person person3 = new Person(passport3,cart1,3000);
+        Person person4 = new Person(passport4,cart1,3000);
+        Person person5 = new Person(passport5,cart1,3000);
+        Person person6 = new Person(passport6,cart1,3000);
+        Person person7 = new Person(passport7,cart1,3000);
+        Person person8 = new Person(passport8,cart1,3000);
 
-        LinkedList<Person>people = new LinkedList<>(Arrays.asList(person2,person1));
+
+        LinkedList<Person>people = new LinkedList<>(Arrays.asList(person2,person1,person3,person4,person5,person6,person7,person8));
 
         Shop shop = new Shop("Globus","Ahunbaev 123",people);
         Collections.sort(list,Product.compareByName);
+        Collections.sort(people,Person.sortByName);
+        Collections.sort(people,Person.sortByAge);
 
         ActionAbleImpl actionAble = new ActionAbleImpl();
         //actionAble.expiration(person1);
