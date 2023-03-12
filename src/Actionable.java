@@ -1,2 +1,6 @@
-package PACKAGE_NAME;public interface Actionable {
+public interface Actionable {
+    void expiration (Person person);
+    void buyProduct(Person person);
+
+
 }
