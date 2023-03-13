@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -12,7 +13,7 @@ public class Main {
         Product product5 = new Product("Alma",30,5,LocalDate.of(2023,4,12),false);
         Product product6 = new Product("Cocacola",120,2,LocalDate.of(2023,5,23),false);
         Product product7 = new Product("chocolate",500,1,LocalDate.of(2023,8,12),false);
-        Product product8 = new Product("Piva",250,2,LocalDate.of(2023,7,23),true);
+        Product product8 = new Product("Piva",250,2,LocalDate.of(2023,7,23),false);
         Product product9 = new Product("Roll",80,4,LocalDate.of(2023,8,23),false);
         Product product10 = new Product("Et",650,4,LocalDate.of(2023,2,23),false);
         LinkedList<Product> list = new LinkedList<>(Arrays.asList(product1,product2,product3,product4,product5,product6));
@@ -21,7 +22,7 @@ public class Main {
         Cart cart = new Cart(list);
         Cart cart1 = new Cart(list1);
 
-        Passport passport1=new Passport("Abdugani uulu","Manas",LocalDate.of(1995,8,26),Gender.MALE);
+        Passport passport1=new Passport("Abdugani uulu","Manas",LocalDate.of(2004,10,31),Gender.MALE);
         Passport passport2=new Passport("Alisherov","Erik",LocalDate.of(2004,4,23),Gender.MALE);
         Passport passport3=new Passport("Tynybekova","Aisuluu",LocalDate.of(1993,8,26),Gender.FEMALE);
         Passport passport4=new Passport("Niyazov","Torogeldi",LocalDate.of(2006,8,26),Gender.MALE);
@@ -51,6 +52,9 @@ public class Main {
         //actionAble.expiration(person1);
         actionAble.buyProduct(person1);
         //System.out.println(list);
+        int age = Period.between(person1.getPassport().getDateOfBirth(), LocalDate.now()).getYears();
+        System.out.println(age);
+        System.out.println(person1.getPassport().getDateOfBirth().getDayOfYear());
 
     }
 }

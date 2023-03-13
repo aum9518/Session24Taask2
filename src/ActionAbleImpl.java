@@ -52,60 +52,64 @@ public class ActionAbleImpl implements Actionable{
                         totsl1+=total;
                     }
                     System.out.println(totsl1);
-                    if (age>18){
-                        System.out.println("Satylsyn");
-                        if (person.getMoney()<totsl1){
-                            System.out.println("Akchanyz jetpedi bir nerseni alyp salaylyby?");
-                            String answeer = new Scanner(System.in).nextLine();
-                            if (answeer.equals("ooba")){
-                                System.out.println("Emneni?");
-                                String question = new Scanner(System.in).nextLine();
-                                for (int i = 0; i < person.getCart().getList().size(); i++) {
-                                    if (question.equals(person.getCart().getList().get(i).getName())){
-                                        System.out.println("Kancha shtuk?");
-                                        int number=new Scanner(System.in).nextInt();
-                                        for (Product x:person.getCart().getList()) {
-                                            if (number<person.getCart().getList().get(i).getQuantity()){
-                                                System.out.println(person.getCart().getList().get(i));
-                                                person.getCart().getList().get(i).setQuantity(person.getCart().getList().get(i).getQuantity()-number);
-                                                System.out.println(person.getCart().getList().get(i));
-                                                int num1 = person.getCart().getList().get(i).getQuantity()* person.getCart().getList().get(i).getPrice();
-                                                System.out.println(num1);
-                                                totsl1-=num1;
-                                                System.out.println(totsl1);
-                                                if (person.getMoney()<totsl1){
-                                                    System.out.println("Akchanyz dagyn ele jetpeit dagyn bir nerseni alyp salynyz");
-                                                    String secondOne = new Scanner(System.in).nextLine();
-                                                    for (int j = 0; j < person.getCart().getList().size(); j++) {
-                                                        if (person.getCart().getList().get(j).getName().equals(secondOne)){
-                                                            System.out.println(person.getCart().getList().get(j));
-                                                            int total1=totsl1 -(person.getCart().getList().get(j).getPrice()*person.getCart().getList().get(j).getQuantity());
-                                                            person.getCart().getList().remove(person.getCart().getList().get(j));
-                                                            if (person.getMoney()>total1){
-                                                                System.out.println("Iygiliktuu tolonndu");
-                                                            }else {
-                                                                throw new Exception("Balansty toluktanyz suranych");
+                    if ( age>=17 ){
+                        if (person.getPassport().getDateOfBirth().getDayOfYear()>=304){
+                            System.out.println("Satylsyn");
+                            if (person.getMoney()<totsl1){
+                                System.out.println("Akchanyz jetpedi bir nerseni alyp salaylyby?");
+                                String answeer = new Scanner(System.in).nextLine();
+                                if (answeer.equals("ooba")){
+                                    System.out.println("Emneni?");
+                                    String question = new Scanner(System.in).nextLine();
+                                    for (int i = 0; i < person.getCart().getList().size(); i++) {
+                                        if (question.equals(person.getCart().getList().get(i).getName())){
+                                            System.out.println("Kancha shtuk?");
+                                            int number=new Scanner(System.in).nextInt();
+                                            for (Product x:person.getCart().getList()) {
+                                                if (number<person.getCart().getList().get(i).getQuantity()){
+                                                    System.out.println(person.getCart().getList().get(i));
+                                                    person.getCart().getList().get(i).setQuantity(person.getCart().getList().get(i).getQuantity()-number);
+                                                    System.out.println(person.getCart().getList().get(i));
+                                                    int num1 = person.getCart().getList().get(i).getQuantity()* person.getCart().getList().get(i).getPrice();
+                                                    System.out.println(num1);
+                                                    totsl1-=num1;
+                                                    System.out.println(totsl1);
+                                                    if (person.getMoney()<totsl1){
+                                                        System.out.println("Akchanyz dagyn ele jetpeit dagyn bir nerseni alyp salynyz");
+                                                        String secondOne = new Scanner(System.in).nextLine();
+                                                        for (int j = 0; j < person.getCart().getList().size(); j++) {
+                                                            if (person.getCart().getList().get(j).getName().equals(secondOne)){
+                                                                System.out.println(person.getCart().getList().get(j));
+                                                                int total1=totsl1 -(person.getCart().getList().get(j).getPrice()*person.getCart().getList().get(j).getQuantity());
+                                                                person.getCart().getList().remove(person.getCart().getList().get(j));
+                                                                if (person.getMoney()>total1){
+                                                                    System.out.println("Iygiliktuu tolonndu");
+                                                                }else {
+                                                                    throw new Exception("Balansty toluktanyz suranych");
+                                                                }
                                                             }
                                                         }
+                                                    }else {
+                                                        throw new Exception("Tuura jazynyz...");
                                                     }
-                                                }else {
-                                                    throw new Exception("Tuura jazynyz...");
+                                                    break;
+
+
                                                 }
-                                                break;
-
-
                                             }
-                                        }
                                             /*if (number==person.getCart().getList().get(i).getQuantity()){
                                                 person.getCart().getList().get(i).setQuantity(number-person.getCart().getList().get(i).getQuantity());
                                                 System.out.println(person.getCart().getList().get(i));
                                             }*/
-                                    }/*else {
+                                        }/*else {
                                             throw new Exception("Mynday product jok");
                                         }*/
-                                }
+                                    }
 
+                                }
                             }
+                        }else {
+                            System.out.println("Saatylbasyn");
                         }
 
                     }else {
