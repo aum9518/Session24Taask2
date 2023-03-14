@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Product product1 = new Product("rice",350,30, LocalDate.of(2023,3,28),false);
         Product product2 = new Product("Sok",180,2,LocalDate.of(2023,3,11),false);
-        Product product3 = new Product("Arak", 380,4,LocalDate.of(2023,3,1),true);
+        Product product3 = new Product("Arak", 380,4,LocalDate.of(2023,3,1),false);
         Product product4 = new Product("Kartoshka",40,10,LocalDate.of(2023,9,19),false);
         Product product5 = new Product("Alma",30,5,LocalDate.of(2023,4,12),false);
         Product product6 = new Product("Cocacola",120,2,LocalDate.of(2023,5,23),false);
