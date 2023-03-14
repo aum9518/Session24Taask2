@@ -7,7 +7,7 @@ import java.util.LinkedList;
 public class Main {
     public static void main(String[] args) {
         Product product1 = new Product("rice",350,30, LocalDate.of(2023,3,28),false);
-        Product product2 = new Product("Sok",180,2,LocalDate.of(2023,3,19),false);
+        Product product2 = new Product("Sok",180,2,LocalDate.of(2023,3,11),false);
         Product product3 = new Product("Arak", 380,4,LocalDate.of(2023,3,1),true);
         Product product4 = new Product("Kartoshka",40,10,LocalDate.of(2023,9,19),false);
         Product product5 = new Product("Alma",30,5,LocalDate.of(2023,4,12),false);
@@ -44,17 +44,19 @@ public class Main {
         LinkedList<Person>people = new LinkedList<>(Arrays.asList(person2,person1,person3,person4,person5,person6,person7,person8));
 
         Shop shop = new Shop("Globus","Ahunbaev 123",people);
-        Collections.sort(list,Product.compareByName);
-        Collections.sort(people,Person.sortByName);
+      //  Collections.sort(list,Product.compareByName);
+        Collections.sort(shop.getList(),Person.sortByName);
         Collections.sort(people,Person.sortByAge);
 
         ActionAbleImpl actionAble = new ActionAbleImpl();
+        actionAble.inShop1(shop);
         //actionAble.expiration(person1);
-        actionAble.buyProduct(person1);
+      // actionAble.buyProduct(person1);
+      //  actionAble.inShop(shop);
         //System.out.println(list);
-        int age = Period.between(person1.getPassport().getDateOfBirth(), LocalDate.now()).getYears();
+       /* int age = Period.between(person1.getPassport().getDateOfBirth(), LocalDate.now()).getYears();
         System.out.println(age);
-        System.out.println(person1.getPassport().getDateOfBirth().getDayOfYear());
+        System.out.println(person1.getPassport().getDateOfBirth().getDayOfYear());*/
 
     }
 }

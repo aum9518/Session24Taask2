@@ -40,7 +40,7 @@ public class Person {
     public static Comparator<Person> sortByName = new Comparator<Person>() {
         @Override
         public int compare(Person o1, Person o2) {
-            return o1.getPassport().getFirstName().compareTo(o2.getPassport().getFirstName());
+            return o1.getPassport().getLastName().compareTo(o2.getPassport().getLastName());
         }
     };
     public static Comparator<Person> sortByAge = new Comparator<Person>() {

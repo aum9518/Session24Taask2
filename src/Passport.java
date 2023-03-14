@@ -2,8 +2,8 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public class Passport {
-    private String firstName;
     private String lastName;
+    private String firstName;
     private LocalDate dateOfBirth;
     private int age;
     private Gender gender;
